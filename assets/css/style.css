@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Roboto";
+}
+
+.grid-container {
+    display: grid;
+}
+
+/** NAVBAR **/
+.navbar {
+    grid-area: navbar;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background-color: #432ED9;
+    padding: 1rem;
+}
+
+.nav-links {
+    display: grid;
+    grid-auto-flow: column;
+    justify-self: end;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #DB15B2;
+}
+
+/** Informacion **/
+.informacion {
+    grid-area: informacion;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.informacion h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.informacion p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.imagen-informacion img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+.imagen-informacion img:hover {
+    filter: grayscale(0%);
+}
+
+/** PRINCIPAL **/
+.galeria {
+    grid-area: galeria;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.galeria h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+.imagenes-galeria img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagenes-galeria {
+    display: flex;
+    width: 100%;
+    height: 430px;
+}
+
+.imagenes-galeria img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+
+.imagenes-galeria img:hover {
+    cursor: crosshair;
+    width: 60%;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+/** Formulario **/
+.contacto {
+    grid-area: contacto;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.estilo-formulario {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #432ED9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #DB15B2;
+}
+
+/** FOOTER **/
+.footer {
+    grid-area: footer;
+    background-color: #432ED9;
+    color: white;
+    padding: 2rem;
+}
+
+.informacion-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.informacion-contacto,
+.link-redes-sociales {
+    margin-bottom: 1.5rem;
+}
+
+.informacion-contacto h3,
+.link-redes-sociales h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.informacion-contacto p,
+.link-redes-sociales ul {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.informacion-contacto p a {
+    text-decoration: none;
+    color: white;
+}
+
+.informacion-contacto p a:hover {
+    text-decoration: none;
+    color: #DB15B2;
+    transition: color 0.3s ease;
+
+}
+
+.link-redes-sociales ul {
+    list-style: none;
+    padding: 0;
+}
+
+.link-redes-sociales ul li {
+    margin-bottom: 0.5rem;
+}
+
+.link-redes-sociales ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.link-redes-sociales ul li a:hover {
+    color: #DB15B2;
+}
+
+/** Version Telefono **/
+@media (max-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "navbar"
+            "informacion"
+            "galeria"
+            "contacto"
+            "footer"
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        top: 100%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    /** Informacion **/
+    .informacion {
+        grid-area: informacion;
+        padding: 1.5rem;
+    }
+
+    .informacion p {
+        font-size: 0.9rem;
+    }
+
+    .imagen-informacion img {
+        max-width: 100%;
+    }
+
+    /** Principal */
+    .galeria {
+        grid-area: galeria;
+        display: flex;
+        width: 100%;
+    }
+
+    .galeria h2 {
+        width: 100%;
+    }
+
+    .imagenes-galeria img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    /** Formulario **/
+    .contacto {
+        grid-area: contacto;
+        padding: 1rem;
+    }
+
+    input,
+    button {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    /** FOOTER **/
+    .informacion-contacto,
+    .link-redes-sociales {
+        width: 100%;
+    }
+
+    .link-redes-sociales ul li {
+        margin: 0 1rem;
+    }
+}
+
+/** Version IPad y escritorio **/
+@media(min-width: 577px) {
+    .grid-container {
+        position: relative;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "navbar informacion"
+            "navbar galeria"
+            "navbar contacto"
+            "navbar footer"
+    }
+
+    .logo img {
+        margin-top: 30px;
+        width: 50px;
+    }
+
+    .navbar {
+        justify-items: center;
+        grid-template-rows: auto auto;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo {
+        justify-self: center;
+        margin-bottom: 1rem;
+    }
+
+    .nav-links {
+        grid-auto-flow: row;
+        justify-self: center;
+        gap: 1rem;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+}
